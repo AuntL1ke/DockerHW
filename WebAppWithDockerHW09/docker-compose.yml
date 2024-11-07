@@ -1,0 +1,15 @@
+services:
+  backend:
+    image: ${DOCKER_REGISTRY-}webappwithdockerhw09
+    build:
+      context: .
+      dockerfile: WebAppWithDockerHW09/Dockerfile
+  
+  client:
+    image: client
+    build:
+      context: ../webclient
+      dockerfile: Dockerfile
+  
+  proxy:
+    image: nginx:mainline
